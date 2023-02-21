@@ -1,0 +1,10 @@
+.proj-img {
+  width: 200px;
+  height: 200px;
+}
+
+.proj-container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
