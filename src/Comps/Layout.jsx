@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react" 
 import { FaBars } from 'react-icons/fa'
-import {Outlet, Link} from "react-router-dom"
+import { BiHomeAlt, BiUser} from "react-icons/bi";
+import { BsClipboardData, BsBriefcase, BsChatSquare } from "react-icons/bs"
+import {Outlet, Link} from "react-router-dom";
 import "./Styles/Layout.css"
 const Layout = () => {
   const  [sideBar, setSideBar] = useState(false)
@@ -10,22 +12,21 @@ const handleSideBar = () => setSideBar(!sideBar)
     <main>
     <div className="container">
      <nav className="nav-menu">
-       <div className="logo"> <h1> Sun_Robert </h1> </div>
-      
-       <ul className={sideBar ? "sideBar active" : "sideBar"} onClick={handleSideBar}>
-        <li>
-         <Link to="/"> Home </Link>
-        </li>
-         <li>
-          <Link to="/about"> About </Link>
-         </li>
-         <li>
-          <Link to="/service"> Projects </Link>
-         </li>
-         <li>
-          <Link to="/contact"> Contact </Link>
-         </li>
-        </ul>
+       {/* <ul className={sideBar ? "sideBar active" : "sideBar"} onClick={handleSideBar}> */}
+        
+         <Link to="/"  smooth={true}
+         spy={true}> <BiHomeAlt className="active"/> </Link>
+        
+        
+          <Link to="/about"> <BiUser /> </Link>
+        
+        
+          <Link to="/service"> <BsBriefcase /> </Link>
+        
+        
+          <Link to="/contact"> <BsChatSquare /> </Link>
+        
+        {/* </ul> */}
       </nav>
         <button className="menu" onClick={handleSideBar} >   <FaBars />
         </button>
